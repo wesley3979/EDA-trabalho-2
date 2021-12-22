@@ -7,6 +7,12 @@
 
 #define ordem 2
 #define maximo (ordem*2)
+
+/*
+Joana Maria Chaves Melo - 405604
+Wesley Bezerra Farias- 495771
+*/
+
 typedef struct paginaCliente* TpaginaCliente;
 typedef struct paginaPedido* TpaginaPedido;
 
@@ -20,9 +26,9 @@ typedef struct{
 typedef struct{
 	int ordemServico;
 	int quantidade;
-	int descProduto; //{Banner = 1, Logo = 2 , Cracha = 3, Catalogo = 4, Outro = 5};
-	int status; //{cancelado = 1, Entregue = 2 , Andamento = 3};
-	char cpfCliente[11]; 
+	int descProduto;
+	int status;
+	int idCliente; 
 } Tpedido;
 
 typedef struct paginaCliente{
@@ -42,21 +48,18 @@ void menu();
 
 //Funções referentes a uma arvore b do tipo de dado Cliente
 Tcliente* buscarCliente(int, TpaginaCliente );
-void insere_na_pagina(TpaginaCliente, Tcliente, TpaginaCliente );
+void insere_cliente_na_pagina(TpaginaCliente, Tcliente, TpaginaCliente );
 short insere_rec_cliente(Tcliente, TpaginaCliente, Tcliente *, TpaginaCliente *);
 TpaginaCliente insereCliente(Tcliente, TpaginaCliente);
 void imprimeCliente(TpaginaCliente, int);
 
 //Funções referentes a uma arvore b do tipo de dado Pedido
-//(Fazer primeiro essa, pois é mais simples, já que só trabalharemos com números inteiros)
+void imprimePedidoPorIdCliente(TpaginaPedido, int, int);
+TpaginaPedido inserePedido(Tpedido, TpaginaPedido);
+short insere_rec_pedido(Tpedido, TpaginaPedido, Tpedido *, TpaginaPedido *);
+void insere_pedido_na_pagina(TpaginaPedido , Tpedido, TpaginaPedido);
+short atualizaPedido(int, int, int, TpaginaPedido);
 
-/*
-Tpedido* buscar(int, TpaginaPedido );
-void insere_na_pagina(TpaginaPedido, Tpedido, TpaginaPedido );
-short insere_rec(Tpedido, TpaginaPedido, Tpedido *, TpaginaPedido *);
-TpaginaPedido insere(Tpedido, TpaginaPedido);
-void imprime(TpaginaPedido, int);
-*/
 
 
 
