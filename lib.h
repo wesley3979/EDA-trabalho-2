@@ -8,11 +8,6 @@
 #define ordem 2
 #define maximo (ordem*2)
 
-/*
-Joana Maria Chaves Melo - 405604
-Wesley Bezerra Farias- 495771
-*/
-
 typedef struct paginaCliente* TpaginaCliente;
 typedef struct paginaPedido* TpaginaPedido;
 
